@@ -41,7 +41,7 @@ class CIRCULARARRAYQUEUE:
 
     def dequeue(self):
         if self.is_empty():
-            raise Emoty('Queue is Empty')
+            raise Empty('Queue is Empty')
 
         #here we get the element at the front of the queue, and save it in an attribute
         item_to_dequeue = self._data[self._front]
@@ -98,7 +98,7 @@ class Empty(Exception):
 
 
 
-if _name_ == "__main__": #this check is mostly used to avoid running the contents of this block when imported into another file
+if __name__ == "__main__": #this check is mostly used to avoid running the contents of this block when imported into another file
     #create a new queue
     queue = CIRCULARARRAYQUEUE()
 
