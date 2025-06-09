@@ -8,7 +8,7 @@ class CIRCULARARRAYQUEUE:
 
     DEFAULT_CAPACITY = 10
 
-    def _init_(self):
+    def __init__(self):
 
 #We can continue to create an empty queue by initializing 3 important things:
 # I  . _data: which is a list filled with None values , the array...
@@ -17,17 +17,17 @@ class CIRCULARARRAYQUEUE:
 
 # create a list/our array, with DEFAULT_CAPACITY slots, all filled with None.
 #You can think of this as creating 10 empty parking slots in a circular parking
-        self.data = [None] * CIRCULARARRAYQUEUE.DEFAULT_CAPACITY
+        self._data = [None] * CIRCULARARRAYQUEUE.DEFAULT_CAPACITY
 
 #here we keep track of how many elements that are actually in the list.
 #for this case the number of cars that are actually parked
-        self.size = 0
+        self._size = 0
 
 #and here we keep track of the first ar we parked at the lot
-        self.front = 0
+        self._front = 0
 
-    def _len_(self):
-        return self.size
+    def __len__(self):
+        return self._size
 
     def is_empty(self):
         return self._size == 0
@@ -103,7 +103,7 @@ if __name__ == "__main__": #this check is mostly used to avoid running the conte
     queue = CIRCULARARRAYQUEUE()
 
     print("QUEUES USING CIRCULAR ARRAYS")
-    print(f"The initila queue size is:  {len(queue)}")
+    print(f"The initial queue size is: {len(queue)}")
     print(f"Is the queue empty? {queue.is_empty()}")
 
 
@@ -135,11 +135,11 @@ if __name__ == "__main__": #this check is mostly used to avoid running the conte
 
     #show what is left in the queue
     print(f"\n Perosn currently at the front: {queue.first()}")
-    print(f"\Total people still in the queue: {len(queue)}")
+    print(f"\nTotal people still in the queue: {len(queue)}")
 
     #demonstate the wrap-around by showing internal state
     print(f"\n Internal details:")
-    print(f"\Front index: {queue._front}")
+    print(f"\nFront index: {queue._front}")
     print(f"\n Array contents: {queue._data}")
 
 #NB - None values are empty slots in our circular array
