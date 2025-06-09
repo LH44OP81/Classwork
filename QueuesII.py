@@ -1,26 +1,26 @@
 class Node:
 
-    def _init_(self, value):
+    def __init__(self, value):
         self.value = value
         self.next = None
 
 class Queue:
-    def _init_(self):
+    def __init__(self):
         self.front = None
         self.rear = None
         self.size = 0
 #Have a dunder method length
-    def _len_(self):
+    def __len__(self):
         return self.size
 #representation dunder
-    def _repr_(self):
+    def __repr__(self):
         items = []
         current_item = self.front
 
         while current_item is not None:
             items.append(str(current_item.value))
             current_item = current_item.next
-        return ','.join(items)
+        return ', '.join(items)
 
     def enqueue(self, value):
 
@@ -30,7 +30,7 @@ class Queue:
             self.front = self.rear = new_node
 
         else:
-            self.rear.next+ new_node
+            self.rear.next = new_node
             self.rear = new_node
 # do not forget to increase the size by one everytime you enqueue
         self.size += 1
@@ -70,8 +70,8 @@ if __name__ == '__main__':
     print(q)
     print(len(q))
 
-    print(q.enqueue())
-    print(q.enqueue())
+    print(q.dequeue())
+    print(q.dequeue())
     print(q)
     print(len(q))
 
