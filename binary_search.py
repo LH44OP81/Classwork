@@ -1,8 +1,18 @@
 Arr = [11, 22, 33, 44, 55, 66, 77, 88, 99]
-key = 77
+
+key = 99
 start = 0
 end = len(Arr)
-found = False
+
+
+#found = False
+#for i in Arr:
+#    if Arr[i] == key:
+#        print("Found")
+#        break
+#    else:
+#        print("Not Found")
+
 
 while start <= end:
 
